@@ -33,13 +33,13 @@ jobs:
           architecture: ${{ matrix.architecture }}
 
       - name: Configure npm loglevel
-        run: npm config set loglevel debug
+        run: npm config set loglevel silly
 
       - name: Install strace
         run: |
           sudo apt install strace -y || sudo yum install strace -y
       - name: Install dependencies with debuglogging
-        run: npm install --ignore-scripts --only=dev --loglevel=debug
+        run: npm install --ignore-scripts --only=dev --loglevel=silly
 
       - name: Output Environment Variables
         run: |
